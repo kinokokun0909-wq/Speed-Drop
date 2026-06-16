@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace SpeedDrop.Stage
 {
@@ -9,5 +9,7 @@ namespace SpeedDrop.Stage
 
         public Transform ExitPoint => exitPoint;
         public float Length => length;
+        public float TopY => transform.position.y + length * 0.5f;
+        public float BottomY => transform.position.y - length * 0.5f;
     }
 }

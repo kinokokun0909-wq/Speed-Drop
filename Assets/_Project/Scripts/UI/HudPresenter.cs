@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using SpeedDrop.Gameplay;
 
 namespace SpeedDrop.UI
@@ -8,8 +8,33 @@ namespace SpeedDrop.UI
     {
         [SerializeField] private ScoreCounter scoreCounter;
         [SerializeField] private SurvivalTimer survivalTimer;
-        [SerializeField] private Text scoreText;
-        [SerializeField] private Text timerText;
+        [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private TMP_Text timerText;
+        [SerializeField] private string scoreFormat = "000000";
+        [SerializeField] private string timerFormat = "000.00";
+
+        private void Awake()
+        {
+            if (scoreCounter == null)
+            {
+                scoreCounter = FindFirstObjectByType<ScoreCounter>();
+            }
+
+            if (survivalTimer == null)
+            {
+                survivalTimer = FindFirstObjectByType<SurvivalTimer>();
+            }
+
+            if (scoreText == null)
+            {
+                scoreText = FindTextByName("ScoreText");
+            }
+
+            if (timerText == null)
+            {
+                timerText = FindTextByName("TimerText");
+            }
+        }
 
         private void OnEnable()
         {
@@ -43,7 +68,7 @@ namespace SpeedDrop.UI
         {
             if (scoreText != null)
             {
-                scoreText.text = score.ToString("000000");
+                scoreText.text = score.ToString(scoreFormat);
             }
         }
 
@@ -51,8 +76,22 @@ namespace SpeedDrop.UI
         {
             if (timerText != null)
             {
-                timerText.text = elapsedTime.ToString("000.00");
+                timerText.text = elapsedTime.ToString(timerFormat);
             }
+        }
+
+        private static TMP_Text FindTextByName(string objectName)
+        {
+            TMP_Text[] texts = FindObjectsByType<TMP_Text>(FindObjectsSortMode.None);
+            for (int i = 0; i < texts.Length; i++)
+            {
+                if (texts[i] != null && texts[i].name == objectName)
+                {
+                    return texts[i];
+                }
+            }
+
+            return null;
         }
     }
 }

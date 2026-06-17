@@ -88,5 +88,18 @@ namespace SpeedDrop.Player
                 body.MoveRotation(Quaternion.LookRotation(Vector3.down, Vector3.forward));
             }
         }
+
+        public void StopMovement()
+        {
+            moveInput = Vector2.zero;
+
+            if (body == null)
+            {
+                return;
+            }
+
+            body.linearVelocity = Vector3.zero;
+            body.angularVelocity = Vector3.zero;
+        }
     }
 }

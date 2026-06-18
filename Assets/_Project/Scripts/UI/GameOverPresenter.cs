@@ -8,6 +8,7 @@ namespace SpeedDrop.UI
     {
         [SerializeField] private GameStateController gameStateController;
         [SerializeField] private TMP_Text gameOverText;
+        [SerializeField] private GameObject retryButton;
 
         private void Awake()
         {
@@ -15,7 +16,10 @@ namespace SpeedDrop.UI
             {
                 gameStateController = FindFirstObjectByType<GameStateController>();
             }
-
+            if (retryButton != null)
+            { 
+                retryButton.SetActive(false);
+            }
             if (gameOverText != null)
             {
                 gameOverText.gameObject.SetActive(false);
@@ -48,9 +52,16 @@ namespace SpeedDrop.UI
 
         private void HandleStateChanged(GameState state)
         {
+          bool isGameOver = state == GameState.GameOver;
+
             if (gameOverText != null)
             {
-                gameOverText.gameObject.SetActive(state == GameState.GameOver);
+                gameOverText.gameObject.SetActive(isGameOver);
+            }
+
+            if (retryButton != null)
+            {
+                retryButton.SetActive(isGameOver);
             }
         }
     }

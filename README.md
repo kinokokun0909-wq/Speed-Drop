@@ -68,4 +68,8 @@ mainへマージ
 * `.meta`ファイルを消さない
 * 分からない競合は勝手に解決しない
 * エラーがある状態でmainへマージしない
-* 困ったらプロジェクトのchatGPTかCODEXに聞いてみる
+* 困ったらプロジェクトのChatGPTかCODEXに聞いてみる
+
+## Unityの画面
+
+![Unityの画面](docs/images/unity-screen.png)

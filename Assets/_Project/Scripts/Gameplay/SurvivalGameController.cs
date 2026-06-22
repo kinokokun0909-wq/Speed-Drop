@@ -84,6 +84,7 @@ namespace SpeedDrop.Gameplay
         public void BeginRun()
         {
             Time.timeScale = 1f;
+            StageScroller.ResetSpeed();
             runActive = true;
             if (playerController != null)
             {

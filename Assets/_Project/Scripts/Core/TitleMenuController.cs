@@ -7,7 +7,7 @@ public class TitleMenuController : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject menuPanel;
 
-    [SerializeField] private string gameSceneName = "test Scene";
+    [SerializeField] private string gameSceneName = "nikuudon scene";
 
     private void Start()
     {
@@ -45,6 +45,11 @@ public class TitleMenuController : MonoBehaviour
     public void StartNormalMode()
     {
         PlayerPrefs.SetString("SelectedMode", "Normal");
+        StartGame();
+    }
+
+    public void StartGame()
+    {
         SceneManager.LoadScene(gameSceneName);
     }
 }

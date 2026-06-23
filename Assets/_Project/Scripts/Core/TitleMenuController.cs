@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleMenuController : MonoBehaviour
 {
+    private const string OpenModeSelectKey = "OpenModeSelectOnTitle";
+
     [SerializeField] private GameObject titlePanel;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject menuPanel;
@@ -11,6 +13,13 @@ public class TitleMenuController : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt(OpenModeSelectKey, 0) == 1)
+        {
+            PlayerPrefs.DeleteKey(OpenModeSelectKey);
+            ShowMenu();
+            return;
+        }
+
         ShowTitle();
     }
 
@@ -37,9 +46,7 @@ public class TitleMenuController : MonoBehaviour
 
     public void ShowModeSelect()
     {
-        titlePanel.SetActive(false);
-        settingsPanel.SetActive(false);
-        menuPanel.SetActive(false);
+        ShowMenu();
     }
 
     public void StartNormalMode()

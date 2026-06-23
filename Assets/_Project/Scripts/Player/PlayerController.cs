@@ -67,11 +67,25 @@ namespace SpeedDrop.Player
             }
 
             float speed = config != null ? config.MoveSpeed : 8f;
-            Vector3 velocity = body.linearVelocity;
-            velocity.x = moveInput.x * speed;
-            velocity.y = 0f;
-            velocity.z = moveInput.y * speed;
-            body.linearVelocity = velocity;
+            float acceleration = config != null ? config.MoveAcceleration : 30f;
+            float deceleration = config != null ? config.MoveDeceleration : 40f;
+            Vector3 currentVelocity = body.linearVelocity;
+            Vector3 targetVelocity = new Vector3(
+               moveInput.x * speed,
+               0f,
+               moveInput.y * speed
+            );
+
+            float rate = moveInput.sqrMagnitude > 0.01f ? acceleration : deceleration;
+
+            Vector3 newVelocity = Vector3.MoveTowards(
+                currentVelocity,
+                targetVelocity,
+                rate * Time.fixedDeltaTime
+            );
+
+            newVelocity.y = 0f;
+            body.linearVelocity = newVelocity;
 
             Vector3 position = body.position;
             position.x = Mathf.Clamp(position.x, xLimits.x, xLimits.y);

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using SpeedDrop.Gameplay;
+using SpeedDrop.Stage;
 
 namespace SpeedDrop.UI
 {
@@ -10,8 +11,10 @@ namespace SpeedDrop.UI
         [SerializeField] private SurvivalTimer survivalTimer;
         [SerializeField] private TMP_Text scoreText;
         [SerializeField] private TMP_Text timerText;
+        [SerializeField] private TMP_Text speedText;
         [SerializeField] private string scoreFormat = "000000";
         [SerializeField] private string timerFormat = "000.00";
+        [SerializeField] private string speedFormat = "000.0";
 
         private void Awake()
         {
@@ -34,6 +37,16 @@ namespace SpeedDrop.UI
             {
                 timerText = FindTextByName("TimerText");
             }
+
+            if (speedText == null)
+            {
+                speedText = FindTextByName("SpeedText");
+            }
+        }
+
+        private void Update()
+        {
+            UpdateSpeed(StageScroller.CurrentSpeed);
         }
 
         private void OnEnable()
@@ -77,6 +90,14 @@ namespace SpeedDrop.UI
             if (timerText != null)
             {
                 timerText.text = elapsedTime.ToString(timerFormat);
+            }
+        }
+
+        private void UpdateSpeed(float speed)
+        {
+            if (speedText != null)
+            {
+                speedText.text = speed.ToString(speedFormat);
             }
         }
 

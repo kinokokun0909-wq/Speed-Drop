@@ -233,6 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpeedDrop.Stage.StageScroller
   config: {fileID: 0}
+  upArrowAccelerationBoost: 5
+  downArrowDeceleration: 7
+  minScrollSpeed: 30
 --- !u!1 &1979839536083127128
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,8 @@ namespace SpeedDrop.Data
     public sealed class StageConfig : ScriptableObject
     {
         [SerializeField] private float scrollSpeed = 12f;
-        [SerializeField] private float scrollAcceleration = 1.6f;
-        [SerializeField] private float maxScrollSpeed = 36f;
+        [SerializeField] private float scrollAcceleration = 7.5f;
+        [SerializeField] private float maxScrollSpeed = 40f;
         [SerializeField] private float chunkLength = 20f;
         [SerializeField] private float spawnDistanceBelowPlayer = 80f;
         [SerializeField] private float despawnDistanceAbovePlayer = 30f;

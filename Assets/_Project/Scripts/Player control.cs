@@ -18,6 +18,7 @@ public class Playercontr : MonoBehaviour
     {
         PlayerInput();
         PlayerMovement();
+        MoveRange();
     }
     private void PlayerInput()
     {

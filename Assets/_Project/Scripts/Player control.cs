@@ -39,4 +39,11 @@ public class Playercontr : MonoBehaviour
             Mathf.Clamp(transform.position.z, min.y, max.y)
         );
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            rb.linearVelocity = Vector3.zero;
+        }
+    }
 }

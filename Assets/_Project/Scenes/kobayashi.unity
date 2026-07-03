@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70819e40ba38814e8154bab99b227c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Playercontr
-  moveSpeed: 5
+  moveSpeed: 8
   rb: {fileID: 2085601863}
   min: {x: -10, y: -10}
   max: {x: 10, y: 10}

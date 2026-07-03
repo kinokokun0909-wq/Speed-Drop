@@ -6,11 +6,14 @@ public class Playercontr : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Vector2 min;
     [SerializeField] private Vector2 max;
+    [SerializeField] private GameObject gameOverText;
+    bool alive;
     private Vector2 inputVector;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameOverText.SetActive(false);
+        alive = true;
     }
 
     // Update is called once per frame
@@ -43,7 +46,9 @@ public class Playercontr : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            rb.linearVelocity = Vector3.zero;
+            alive = false;
+            Time.timeScale = 0f;
+            gameOverText.SetActive(true);
         }
     }
 }

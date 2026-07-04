@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject titlePanel;
+    [SerializeField] private GameObject settingPanel;
+    [SerializeField] private GameObject modeSelectPanel;
+
     void Start()
     {
-        
+        ShowTitlePanel();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowTitlePanel()
     {
-        
+        titlePanel.SetActive(true);
+        settingPanel.SetActive(false);
+        modeSelectPanel.SetActive(false);
+    }
+
+    public void ShowSettingPanel()
+    {
+        titlePanel.SetActive(false);
+        settingPanel.SetActive(true);
+        modeSelectPanel.SetActive(false);
+    }
+
+    public void ShowModeSelectPanel()
+    {
+        titlePanel.SetActive(false);
+        settingPanel.SetActive(false);
+        modeSelectPanel.SetActive(true);
     }
 }

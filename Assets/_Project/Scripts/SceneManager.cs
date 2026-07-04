@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class SceneChange : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void BackToTitle()
     {
-        
+        SceneManager.LoadScene("title");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Retry()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Survival()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("kobayashi");
     }
 }

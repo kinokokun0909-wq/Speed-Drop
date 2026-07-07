@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/title.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Project/Scenes/nikuudon scene.unity
     guid: 9a4aa872be0550142a253123f57d9b6b
   - enabled: 1
     path: Assets/_Project/Scenes/kobayashi.unity
     guid: 81a389980a008cf499d8ed3a0d7004d2
+  - enabled: 1
+    path: Assets/_Project/Scenes/GameScene.unity
+    guid: 001a8f786e830e84ea29b300e26076b0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

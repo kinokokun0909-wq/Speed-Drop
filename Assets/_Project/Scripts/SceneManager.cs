@@ -10,8 +10,8 @@ public class SceneChange : MonoBehaviour
 
     public void Retry()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Survival();
     }
 
     public void Survival()

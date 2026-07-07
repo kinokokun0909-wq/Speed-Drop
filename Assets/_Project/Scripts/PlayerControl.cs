@@ -9,7 +9,7 @@ public class Playercontr : MonoBehaviour
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private GameObject RetryText;
     [SerializeField] private GameObject BackText;
-    public bool alive = true;
+    public static bool alive = true;
     private Vector2 inputVector;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +25,6 @@ public class Playercontr : MonoBehaviour
     {
         if (!alive)
         {
-            Time.timeScale = 0f;
             gameOverText.SetActive(true);
             RetryText.SetActive(true);
             BackText.SetActive(true);

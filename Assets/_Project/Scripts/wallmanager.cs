@@ -1,19 +1,16 @@
 using UnityEngine;
 
 public class wallmanager : MonoBehaviour
-{
-    public GameObject wallPrefab;
-    public bool arrive;
-
+{    public GameObject wallPrefab;
     void Start()
-    {
-        if (arrive == true)
-        {
-            Invoke("SpawnWall", 3f);
-        }
+    { 
+        if (Playercontr.alive == true){
+              InvokeRepeating("SpawnWall", 3f,3f);
+            
     }
 
-    void SpawnWall()
+    }
+     void SpawnWall()
     {
         Instantiate(wallPrefab, transform.position, Quaternion.identity);
     }

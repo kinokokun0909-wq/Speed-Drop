@@ -17,6 +17,6 @@ public class SceneChange : MonoBehaviour
     public void Survival()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("kobayashi");
+        SceneManager.LoadScene("GameScene");
     }
 }

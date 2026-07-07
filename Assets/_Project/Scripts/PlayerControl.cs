@@ -9,7 +9,7 @@ public class Playercontr : MonoBehaviour
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private GameObject RetryText;
     [SerializeField] private GameObject BackText;
-    public static bool alive = true;
+    [SerializeField] public bool alive;
     private Vector2 inputVector;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

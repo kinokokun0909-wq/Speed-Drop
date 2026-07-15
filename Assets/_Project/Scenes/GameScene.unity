@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::wallmanager
   wallPrefab: {fileID: 1479036090}
-  PlayerContr: {fileID: 0}
+  PlayerContr: {fileID: 705363141}
 --- !u!4 &1264016664
 Transform:
   m_ObjectHideFlags: 0
